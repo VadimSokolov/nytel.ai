@@ -1,0 +1,257 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+$font-family-monospace: 'IBM Plex Mono', monospace;
+
+$body-color: #0A1628;
+$body-bg: #FFFFFF;
+$link-color: #1F6B6B;
+
+$font-size-root: 16px;
+$h1-font-size: 1.75rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.25rem;
+
+$headings-font-weight: 500;
+$headings-color: #0A1628;
+
+$toc-font-size: 0.8125rem;
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600&display=swap');
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header spacing */
+#title-block-header {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(10, 22, 40, 0.10);
+  background: #F7F8FA;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#title-block-header .title {
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+}
+
+#title-block-header .subtitle {
+  color: rgba(10, 22, 40, 0.60);
+  font-size: 1.0625rem;
+}
+
+/* Hide Quarto date since we don't need it */
+#title-block-header .date,
+#title-block-header .quarto-title-meta {
+  display: none;
+}
+
+/* Section headings */
+.content h2 {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(10, 22, 40, 0.10);
+}
+
+/* Body text */
+main p {
+  color: rgba(10, 22, 40, 0.60);
+  line-height: 1.8;
+  font-size: 0.9375rem;
+}
+
+main strong {
+  color: #0A1628;
+}
+
+/* Tables */
+.table {
+  font-size: 0.875rem;
+}
+
+.table thead th {
+  font-family: $font-family-monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(10, 22, 40, 0.40);
+  border-bottom: 1px solid rgba(10, 22, 40, 0.20);
+}
+
+.table td {
+  color: rgba(10, 22, 40, 0.60);
+  vertical-align: top;
+}
+
+.table td strong {
+  color: #0A1628;
+  font-weight: 500;
+}
+
+.table caption {
+  font-size: 0.8125rem;
+  color: rgba(10, 22, 40, 0.40);
+}
+
+/* TOC */
+#TOC {
+  font-family: $font-family-monospace;
+  padding-top: 5rem;
+}
+
+#TOC .active {
+  color: #2D8B8B;
+  border-left-color: #2D8B8B;
+}
+
+/* Section numbers */
+.header-section-number {
+  color: #2D8B8B;
+  margin-right: 0.25rem;
+}
+
+/* Nytel site header */
+.nytel-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  height: 3.5rem;
+  background: rgba(255,255,255,0.92);
+  border-bottom: 1px solid rgba(10, 22, 40, 0.10);
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(12px);
+}
+
+.nytel-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nytel-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .nytel-header-inner { padding: 0 2.5rem; }
+  .nytel-header-nav { gap: 2rem; }
+}
+
+.nytel-header-nav a {
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  color: rgba(10, 22, 40, 0.60);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .nytel-header-nav a { font-size: 0.8125rem; }
+}
+
+.nytel-header-nav a:hover {
+  color: #0A1628;
+}
+
+.hide-mobile {
+  display: none;
+}
+@media (min-width: 640px) {
+  .hide-mobile { display: inline; }
+}
+
+/* Nytel CTA footer */
+.nytel-cta {
+  background: #0A1628;
+  color: #FFFFFF;
+  padding: 4rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.nytel-cta h2 {
+  color: #FFFFFF;
+  border: none;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.nytel-cta p {
+  color: rgba(255,255,255,0.65) !important;
+  max-width: 50ch;
+  margin-bottom: 1.5rem;
+}
+
+.nytel-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nytel-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: $font-family-monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  text-decoration: none;
+}
+
+.nytel-btn-teal {
+  background: #2D8B8B;
+  color: #FFFFFF;
+}
+.nytel-btn-teal:hover {
+  background: #1F6B6B;
+  color: #FFFFFF;
+}
+
+.nytel-btn-outline {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.nytel-btn-outline:hover {
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* Nytel footer */
+.nytel-footer {
+  padding: 2rem 1.5rem;
+  border-top: 1px solid rgba(10, 22, 40, 0.10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  color: rgba(10, 22, 40, 0.40);
+}
+
+.nytel-footer a {
+  color: rgba(10, 22, 40, 0.60);
+  text-decoration: none;
+}
