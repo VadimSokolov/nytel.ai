@@ -600,11 +600,21 @@ a:hover {
   font-weight: 600;
 }
 
+.wp-content .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+
 .wp-content table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
   font-size: 0.875rem;
+  min-width: 400px;
+}
+
+@media (max-width: 640px) {
+  .wp-content table { font-size: 0.8125rem; }
 }
 
 .wp-content th {
@@ -615,15 +625,19 @@ a:hover {
   letter-spacing: 0.06em;
   color: var(--text-tertiary);
   text-align: left;
-  padding: 0.75rem 1rem;
+  padding: 0.625rem 0.75rem;
   border-bottom: 1px solid var(--border-strong);
 }
 
 .wp-content td {
-  padding: 0.625rem 1rem;
+  padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--border);
   color: var(--text-secondary);
   vertical-align: top;
+}
+
+.wp-content .col-narrow {
+  width: 5rem;
 }
 
 .wp-content td strong {

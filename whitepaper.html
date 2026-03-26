@@ -72,66 +72,59 @@
 
           <p>A production deployment for a full Phase III trial calls for roughly <strong>5–8 specialized agents</strong> sharing a common knowledge layer: the SOP-IR ontology, a site status database, and message history. They communicate via structured handoffs, not natural language.</p>
 
+          <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Tier</th>
+                <th class="col-narrow">Tier</th>
                 <th>Agent</th>
-                <th>Primary Function</th>
-                <th>Trigger</th>
+                <th>Function</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Ingestion</strong></td>
-                <td>Ingestion Agent</td>
-                <td>Email monitoring, OCR, document staging</td>
-                <td>New email / cron</td>
+                <td>Ingestion</td>
+                <td>Email monitoring, OCR, staging</td>
               </tr>
               <tr>
                 <td><strong>Processing</strong></td>
-                <td>Classification Agent</td>
-                <td>TMF artifact matching, entity extraction</td>
-                <td>New document</td>
+                <td>Classification</td>
+                <td>TMF matching, entity extraction</td>
               </tr>
               <tr>
                 <td></td>
-                <td>Verification Agent</td>
-                <td>ALCOA++ checks, expiry, cross-reference</td>
-                <td>Post-classification</td>
+                <td>Verification</td>
+                <td>ALCOA++ checks, expiry, cross-refs</td>
               </tr>
               <tr>
                 <td><strong>Orchestration</strong></td>
-                <td>Resolution Agent</td>
-                <td>Issue tracking, escalation state</td>
-                <td>QC rejection</td>
+                <td>Resolution</td>
+                <td>Issue tracking, escalation</td>
               </tr>
               <tr>
                 <td></td>
-                <td>Follow-up Agent</td>
-                <td>Email drafting, template selection</td>
-                <td>Escalation trigger</td>
+                <td>Follow-up</td>
+                <td>Email drafting, templates</td>
               </tr>
               <tr>
                 <td><strong>Operations</strong></td>
-                <td>Monitoring Agent</td>
-                <td>Site visit scheduling, data review</td>
-                <td>Milestone events</td>
+                <td>Monitoring</td>
+                <td>Site visits, data review</td>
               </tr>
               <tr>
                 <td></td>
-                <td>Safety Agent</td>
-                <td>AE/SAE detection, expedited reporting</td>
-                <td>Data events</td>
+                <td>Safety</td>
+                <td>AE/SAE detection, reporting</td>
               </tr>
               <tr>
                 <td></td>
-                <td>Protocol Deviation Agent</td>
-                <td>Deviation detection and CAPA tracking</td>
-                <td>Data anomalies</td>
+                <td>Protocol Deviation</td>
+                <td>Deviation detection, CAPA</td>
               </tr>
             </tbody>
           </table>
+          </div>
 
           <p>On cost: classification and extraction — the high-frequency, lower-stakes work — runs well on smaller, cheaper models (Haiku/Flash tier) and accounts for 70–80% of LLM calls. Verification and draft generation, where reasoning quality matters, warrants frontier models (Sonnet/Opus). The savings from this split are substantial, though the exact figures depend on volume and how complex the reasoning tasks turn out to be in practice.</p>
 
@@ -139,37 +132,39 @@
 
           <p>Nytel sits above CTMS, eTMF, and EDC as an orchestration layer — it reads state from those systems and writes actions back, but does not replace them. Integration unfolds in two phases. Phase 1 runs through email and a standalone UI: no API credentials needed, no IT procurement, no changes to partner systems. Phase 2 moves to direct API integration once the workflows have been validated and sponsors are ready to grant access — a process that typically takes weeks to months in enterprise environments and should not be assumed to happen quickly.</p>
 
+          <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>System</th>
-                <th>Integration Mode</th>
-                <th>Critical Data Objects</th>
+                <th>Mode</th>
+                <th>Data Objects</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>eTMF</strong> (Veeva Vault, Documentum)</td>
-                <td>Read-only API</td>
-                <td>Document metadata, artifact status, TOC completeness, zone assignments</td>
-              </tr>
-              <tr>
-                <td><strong>CTMS</strong> (Medidata, Veeva Vault)</td>
-                <td>Read + write milestones</td>
-                <td>Site activation dates, visit schedules, contact info, milestone status</td>
-              </tr>
-              <tr>
-                <td><strong>EDC</strong> (Rave, Medidata Capture)</td>
+                <td><strong>eTMF</strong></td>
                 <td>Read-only</td>
-                <td>CRF completion status, query counts, data lock status</td>
+                <td>Doc metadata, artifact status, TOC, zones</td>
               </tr>
               <tr>
-                <td><strong>Email</strong> (MS Graph API, IMAP)</td>
-                <td>Read + send (with approval)</td>
-                <td>Document submissions, coordinator communications</td>
+                <td><strong>CTMS</strong></td>
+                <td>Read + write</td>
+                <td>Activation dates, visits, contacts, milestones</td>
+              </tr>
+              <tr>
+                <td><strong>EDC</strong></td>
+                <td>Read-only</td>
+                <td>CRF status, query counts, data lock</td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td>Read + send</td>
+                <td>Doc submissions, coordinator comms</td>
               </tr>
             </tbody>
           </table>
+          </div>
 
           <p>In practice, eTMF read-only means replicating what a CRA does in a periodic review: pull the artifact inventory for a site, compare it against the expected checklist for the current milestone, apply quality rules, and generate a gap report. The minimal API surface for Veeva Vault covers artifact listing, metadata retrieval, and status updates; Vault Query Language (VQL) is the preferred interface for more structured queries. Where APIs don't exist, email-based submission with a parallel document registry is the fallback — UI automation is not, because it breaks with every platform update.</p>
 
@@ -181,10 +176,11 @@
 
           <p>The follow-up cadence is designed to keep pressure on without overwhelming coordinators:</p>
 
+          <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Day</th>
+                <th class="col-narrow">Day</th>
                 <th>Action</th>
                 <th>Recipient</th>
               </tr>
@@ -217,6 +213,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <p>Three things prevent this from becoming noise: outstanding items for the same contact are batched into a single weekly message; reminders pause when a query is already awaiting site response; and the study team can flag a site as quiet (coordinator on leave, site shutdown). The clock resets on any response — a coordinator who sends a document that then fails QC gets a correction request, not another missing-document reminder.</p>
 
