@@ -118,34 +118,55 @@ a:hover {
 }
 
 .header-logo {
-  font-family: var(--mono);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: -0.02em;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.header-logo span {
-  color: var(--teal);
+.header-logo img {
+  height: 24px;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .header-logo img { height: 28px; }
 }
 
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .header-nav { gap: 2rem; }
 }
 
 .header-nav a {
   font-family: var(--mono);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.15s;
+  white-space: nowrap;
 }
+
+@media (min-width: 768px) {
+  .header-nav a { font-size: 0.8125rem; }
+}
+
 .header-nav a:hover {
   color: var(--text);
   text-decoration: none;
+}
+
+.header-nav .hide-mobile {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .header-nav .hide-mobile { display: inline; }
 }
 
 /* ---- Buttons ---- */
