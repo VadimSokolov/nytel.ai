@@ -2240,75 +2240,65 @@ vertical-align: -.125em;
 <p>The choice between a single agent and a multi-agent pipeline is worth thinking through carefully. A single agent is fast to build and easy to deploy—no orchestration layer, no handoff contracts. The downside is that debugging is harder: when something goes wrong, you have only the final output to work from and no intermediate artifacts to inspect. A multi-agent pipeline produces structured outputs at each stage, making failures much easier to localize. The tradeoff is coordination overhead and more moving parts to maintain.</p>
 <p>For the MVP, a <strong>single agent</strong> covering the full TMF review workflow is the right starting point. The workflow is well-defined, document volume is modest, and the faster iteration cycle matters more early on. Moving to a pipeline makes sense when specific failure modes emerge—not before.</p>
 <p>A production deployment for a full Phase III trial calls for roughly <strong>5–8 specialized agents</strong> sharing a common knowledge layer: the SOP-IR ontology, a site status database, and message history. They communicate via structured handoffs, not natural language.</p>
-<div id="tbl-agents" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[15,18,35,32]">
+<div id="tbl-agents" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[13,22,65]">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-agents-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 1: Agent count and roles for full trial coverage.
+Table 1: Agent roles for full trial coverage.
 </figcaption>
 <div aria-describedby="tbl-agents-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 18%">
-<col style="width: 35%">
-<col style="width: 32%">
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 65%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Tier</th>
 <th>Agent</th>
 <th>Function</th>
-<th>Trigger</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Ingestion</strong></td>
 <td>Ingestion</td>
-<td>Email monitoring, OCR, staging</td>
-<td>New email / cron</td>
+<td>Email, OCR, staging</td>
 </tr>
 <tr class="even">
 <td><strong>Processing</strong></td>
 <td>Classification</td>
-<td>TMF matching, entity extraction</td>
-<td>New document</td>
+<td>TMF matching, extraction</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Verification</td>
-<td>ALCOA++ checks, expiry, cross-refs</td>
-<td>Post-classification</td>
+<td>ALCOA++, expiry, cross-refs</td>
 </tr>
 <tr class="even">
 <td><strong>Orchestration</strong></td>
 <td>Resolution</td>
 <td>Issue tracking, escalation</td>
-<td>QC rejection</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Follow-up</td>
 <td>Email drafting, templates</td>
-<td>Escalation trigger</td>
 </tr>
 <tr class="even">
 <td><strong>Operations</strong></td>
 <td>Monitoring</td>
 <td>Site visits, data review</td>
-<td>Milestone events</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Safety</td>
 <td>AE/SAE detection, reporting</td>
-<td>Data events</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>Protocol Deviation</td>
 <td>Deviation detection, CAPA</td>
-<td>Data anomalies</td>
 </tr>
 </tbody>
 </table>
