@@ -63,8 +63,8 @@
           <div class="stat-label">Trials Delayed</div>
         </div>
         <div class="hero-stat">
-          <div class="stat-number">10,000+</div>
-          <div class="stat-label">Unfilled Positions (US)</div>
+          <div class="stat-number">1.5 yr</div>
+          <div class="stat-label">Median Staff Tenure</div>
         </div>
       </div>
     </div>
@@ -82,24 +82,24 @@
       </p>
       <div class="problem-grid">
         <div class="problem-card">
-          <h3>Document collection</h3>
-          <p>Site coordinators submit CVs, training certificates, medical licenses, and regulatory forms via email. Tracking what's missing, what's expired, and what needs correction is a full-time job.</p>
-          <span class="stat-highlight">A handful of document types drive most site activation QC work</span>
-        </div>
-        <div class="problem-card">
-          <h3>Quality checks</h3>
-          <p>Every document must meet ALCOA++ standards, GCP training currency, signature verification, and sponsor-specific rules. Manual review is slow and inconsistent.</p>
-          <span class="stat-highlight">Most checks are universal across sponsors</span>
-        </div>
-        <div class="problem-card">
-          <h3>Follow-up and escalation</h3>
-          <p>When sites don't respond, the escalation ladder runs from coordinator to field monitor to country monitor to study lead — over 21 days of manual tracking.</p>
+          <h3>Site activation</h3>
+          <p>CDA executed to site going live takes weeks of document collection, regulatory checks, and back-and-forth with coordinators. Delays here cascade into enrollment delays.</p>
           <span class="stat-highlight">$500K+/day in enrollment delay costs (Tufts CSDD)</span>
         </div>
         <div class="problem-card">
-          <h3>Staff turnover</h3>
-          <p>Median tenure in clinical operations is 1.5 years. Every departure takes institutional knowledge — which sites are slow, which sponsors have unusual requirements — with it.</p>
-          <span class="stat-highlight">10,000+ unfilled positions in the US</span>
+          <h3>Cross-system coordination</h3>
+          <p>Trial data lives across CTMS, eTMF, EDC, and email. Reconciling status, tracking milestones, and keeping systems in sync is manual work that scales with site count.</p>
+          <span class="stat-highlight">50+ vendors and a dozen platforms per Phase III trial</span>
+        </div>
+        <div class="problem-card">
+          <h3>Follow-up and escalation</h3>
+          <p>When sites don't respond, the escalation ladder runs from coordinator to field monitor to country monitor to study lead. Tracking where each site stands is a full-time job.</p>
+          <span class="stat-highlight">70% of clinical trials experience delays</span>
+        </div>
+        <div class="problem-card">
+          <h3>Institutional knowledge loss</h3>
+          <p>Median tenure in clinical operations is 1.5 years. Every departure takes knowledge — which sites are slow, which sponsors have unusual requirements — with it.</p>
+          <span class="stat-highlight">30%+ annual turnover in clinical research (BDO 2024)</span>
         </div>
       </div>
     </div>
@@ -109,36 +109,31 @@
   <section class="section section-alt">
     <div class="container">
       <span class="section-number">02</span>
-      <h2>How Nytel works</h2>
+      <h2>Specialized agents for trial operations</h2>
       <p class="section-lead">
-        AI agents that fit existing workflows — reading email, checking documents,
-        tracking milestones — with humans supervising, not manually driving every step.
+        Each agent handles a specific operational workflow — fitting into existing
+        processes, not replacing them. Humans supervise; agents execute.
       </p>
-      <div class="pipeline">
-        <div class="pipeline-step">
-          <span class="step-number">01</span>
-          <h3>Ingest</h3>
-          <p>Monitor email and uploads. OCR scanned documents. Stage for processing.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>Document QC Agent</h3>
+          <p>Ingests documents via email or upload, classifies against the TMF reference model, runs ALCOA++ quality checks, and flags issues for review. Handles CVs, licenses, training certificates, regulatory forms.</p>
+          <span class="stat-highlight">Deterministic rules, not generative models, for compliance logic</span>
         </div>
-        <div class="pipeline-step">
-          <span class="step-number">02</span>
-          <h3>Classify</h3>
-          <p>Match documents to TMF reference model. Extract entities and metadata.</p>
+        <div class="problem-card">
+          <h3>Site Activation Agent</h3>
+          <p>Tracks the end-to-end path from CDA execution to site go-live. Monitors milestone completion, identifies blockers, and coordinates across sponsor, CRO, and site teams.</p>
+          <span class="stat-highlight">Measurable KPI: CDA-to-activated time</span>
         </div>
-        <div class="pipeline-step">
-          <span class="step-number">03</span>
-          <h3>Verify</h3>
-          <p>Run ALCOA++ checks, expiry validation, cross-references. Flag issues.</p>
+        <div class="problem-card">
+          <h3>Follow-Up Agent</h3>
+          <p>Manages escalation cadence with intelligent batching — outstanding items grouped per contact, reminders paused when awaiting response, site responsiveness profiles adjusting timing.</p>
+          <span class="stat-highlight">Configurable escalation ladder per sponsor SOP</span>
         </div>
-        <div class="pipeline-step">
-          <span class="step-number">04</span>
-          <h3>Resolve</h3>
-          <p>Track issues, draft correction requests, manage escalation state.</p>
-        </div>
-        <div class="pipeline-step">
-          <span class="step-number">05</span>
-          <h3>Follow up</h3>
-          <p>Automated cadence with batching, pause logic, and site responsiveness profiles.</p>
+        <div class="problem-card">
+          <h3>Monitoring Agent</h3>
+          <p>Tracks site visit schedules, enrollment progress, and data review status. Surfaces anomalies and deviations before they become inspection findings.</p>
+          <span class="stat-highlight">Institutional knowledge persists as data, not tribal memory</span>
         </div>
       </div>
     </div>
@@ -169,7 +164,7 @@
         </div>
         <div class="problem-card">
           <h3>Sponsor-configurable</h3>
-          <p>Universal QC rules cover 80-90% of checks. Sponsor overrides — stricter thresholds, custom templates, additional fields — configure on top without touching the rule engine.</p>
+          <p>Universal rules handle the majority of checks. Sponsor overrides — stricter thresholds, custom templates, additional fields — configure on top without touching the rule engine.</p>
         </div>
       </div>
     </div>
