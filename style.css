@@ -19,7 +19,7 @@
   --text-secondary: rgba(10, 22, 40, 0.90);
   --text-tertiary: rgba(10, 22, 40, 0.40);
   --mono: 'IBM Plex Mono', monospace;
-  --sans: 'IBM Plex Sans', sans-serif;
+  --sans: 'IBM Plex Mono', monospace;
 }
 
 *, *::before, *::after {
