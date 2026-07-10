@@ -77,6 +77,14 @@ a:hover {
   border-bottom: 1px solid var(--border);
 }
 
+/* hero wraps content in .container; because .hero is a flex row, the
+   container would shrink to content width and margin:auto would center
+   it. width:100% makes it fill the row so hero content left-aligns at
+   the same edge as every other section (and overview.html). */
+.hero > .container {
+  width: 100%;
+}
+
 .hero-inner {
   padding: 4rem 0;
 }
@@ -230,6 +238,31 @@ a:hover {
   font-size: 0.9375rem;
   color: var(--navy);
   font-weight: 500;
+}
+
+/* ---- FAQ ---- */
+
+.faq {
+  border-top: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
+
+.faq-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item h3 {
+  font-size: 1.0625rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 72ch;
 }
 
 /* ============================================================
