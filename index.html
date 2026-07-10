@@ -29,6 +29,10 @@
     "@type": "Organization",
     "name": "Nytel",
     "url": "https://nytel.ai",
+    "logo": "https://nytel.ai/logo.svg",
+    "image": "https://nytel.ai/og-image.png",
+    "slogan": "Trials, on time.",
+    "email": "contact@nytel.ai",
     "description": "Nytel builds AI agents that automate coordination work in clinical trials — document QC, site activation, follow-up workflows, and monitoring — sitting above existing systems like CTMS, eTMF, and EDC as an orchestration layer.",
     "founder": {
       "@type": "Person",
@@ -45,6 +49,20 @@
         "https://vsokolov.quarto.pub/clinos/"
       ]
     },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "contact@nytel.ai",
+      "url": "https://cal.com/nytel",
+      "areaServed": "US",
+      "availableLanguage": "English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northern Virginia",
+      "addressRegion": "VA",
+      "addressCountry": "US"
+    },
     "areaServed": "US",
     "knowsAbout": [
       "clinical trial operations",
@@ -56,6 +74,58 @@
       "Bayesian adaptive trial design",
       "clinical trial follow-up automation",
       "ICH-GCP regulatory compliance"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI agents for clinical trial operations",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Document QC Agent",
+            "description": "Ingests documents via email or upload, classifies against the TMF reference model, runs ALCOA++ quality checks, and flags issues for human review."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Site Activation Agent",
+            "description": "Tracks the end-to-end path from CDA execution to site go-live — milestone completion, blockers, and coordination across sponsor, CRO, and site teams."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Follow-Up Agent",
+            "description": "Manages escalation cadence with intelligent batching — outstanding items grouped per contact, reminders paused while awaiting a response."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Monitoring Agent",
+            "description": "Tracks site visit schedules, enrollment progress, and data review status, surfacing anomalies before they become inspection findings."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does Nytel do?", "acceptedAnswer": { "@type": "Answer", "text": "Nytel builds AI agents that automate the coordination work in clinical trials — document QC, site activation, follow-up and escalation, and monitoring. The agents sit above existing systems like CTMS, eTMF, and EDC as an orchestration layer: they read state and write auditable actions back, without replacing those systems." } },
+      { "@type": "Question", "name": "How is Nytel different from platforms like Medidata, Veeva, or IQVIA?", "acceptedAnswer": { "@type": "Answer", "text": "Those platforms optimize within their own silos. Nytel automates the work between systems — chasing documents from sites, reconciling data, and tracking follow-ups — which today largely lives in email, Slack, spreadsheets, and people's heads." } },
+      { "@type": "Question", "name": "Does Nytel use generative AI to make compliance decisions?", "acceptedAnswer": { "@type": "Answer", "text": "No. Quality checks use deterministic rules and code, not generative models, so every decision is auditable and reproducible. LLMs handle document and communication understanding only. OCR confidence below 0.80 triggers human review, and safety exceptions bypass automation." } },
+      { "@type": "Question", "name": "Which workflow does Nytel automate first?", "acceptedAnswer": { "@type": "Answer", "text": "Site activation — from CDA execution to site go-live. It is where timelines slip first and document-chasing is most acute, and it offers a measurable KPI: CDA-to-activated time. A small set of document types — investigator CVs, medical licenses, GCP certificates, FDA 1572 forms, and delegation logs — drives most of the QC work." } },
+      { "@type": "Question", "name": "What does it take to get started — API integrations or IT procurement?", "acceptedAnswer": { "@type": "Answer", "text": "Nytel starts where the data already is — email, Slack, and spreadsheets — so no API credentials, no IT procurement, and no changes to partner systems are required to begin. Direct system APIs come in a later phase." } },
+      { "@type": "Question", "name": "Who founded Nytel?", "acceptedAnswer": { "@type": "Answer", "text": "Nytel was founded by Vadim Sokolov, PhD — an Associate Professor at George Mason University in Systems Engineering and Operations Research, previously a Principal Computational Scientist at Argonne National Laboratory and a Visiting Professor at the University of Chicago Booth School of Business." } }
     ]
   }
   </script>
@@ -238,6 +308,43 @@
             <div class="cred-label">Location</div>
             <div class="cred-value">Northern Virginia (Washington, DC area)</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <span class="section-number">05</span>
+      <h2>Common questions</h2>
+      <p class="section-lead">
+        Straight answers to what clinical operations teams ask most about how Nytel fits into a trial.
+      </p>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>What does Nytel do?</h3>
+          <p>Nytel builds AI agents that automate the coordination work in clinical trials — document QC, site activation, follow-up and escalation, and monitoring. The agents sit above existing systems like CTMS, eTMF, and EDC as an orchestration layer: they read state and write auditable actions back, without replacing those systems.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How is Nytel different from platforms like Medidata, Veeva, or IQVIA?</h3>
+          <p>Those platforms optimize within their own silos. Nytel automates the work between systems — chasing documents from sites, reconciling data, and tracking follow-ups — which today largely lives in email, Slack, spreadsheets, and people's heads.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does Nytel use generative AI to make compliance decisions?</h3>
+          <p>No. Quality checks use deterministic rules and code, not generative models, so every decision is auditable and reproducible. LLMs handle document and communication understanding only. OCR confidence below 0.80 triggers human review, and safety exceptions bypass automation.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Which workflow does Nytel automate first?</h3>
+          <p>Site activation — from CDA execution to site go-live. It is where timelines slip first and document-chasing is most acute, and it offers a measurable KPI: CDA-to-activated time. A small set of document types — investigator CVs, medical licenses, GCP certificates, FDA 1572 forms, and delegation logs — drives most of the QC work.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does it take to get started — API integrations or IT procurement?</h3>
+          <p>Nytel starts where the data already is — email, Slack, and spreadsheets — so no API credentials, no IT procurement, and no changes to partner systems are required to begin. Direct system APIs come in a later phase.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who founded Nytel?</h3>
+          <p>Nytel was founded by Vadim Sokolov, PhD — an Associate Professor at George Mason University in Systems Engineering and Operations Research, previously a Principal Computational Scientist at Argonne National Laboratory and a Visiting Professor at the University of Chicago Booth School of Business.</p>
         </div>
       </div>
     </div>

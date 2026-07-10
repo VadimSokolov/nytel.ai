@@ -1,0 +1,36 @@
+# Nytel
+
+> Nytel builds AI agents that automate the coordination work in clinical trial operations — document QC, site activation, follow-up/escalation, and monitoring. The agents sit above existing systems (CTMS, eTMF, EDC, email, Slack, spreadsheets) as an orchestration layer: they read state and write auditable actions back, but do not replace those systems. Compliance logic is deterministic (rules and code, not generative models); LLMs handle document and communication understanding only; humans supervise. Founded by Vadim Sokolov, PhD.
+
+## Pages
+- [Home](https://nytel.ai/): What Nytel does — AI agents for clinical trial operations, the coordination problem, the agents, and the founder.
+- [How Nytel Works — Overview](https://nytel.ai/overview.html): One-page architecture overview — the orchestration layer, the four agents, key design principles, and the site-activation entry point.
+- [Whitepaper](https://nytel.ai/whitepaper.html): "A Clinical Operating System for Agentic Trial Operations" — architecture, integration, and operational design in depth.
+
+## The agents
+- Document QC Agent: classifies documents against the TMF reference model, runs ALCOA++ quality checks, flags issues for human review.
+- Site Activation Agent: tracks CDA execution to site go-live; monitors milestones and blockers; measurable KPI is CDA-to-activated time.
+- Follow-Up Agent: manages escalation cadence with intelligent batching; reminders pause while awaiting a response.
+- Monitoring Agent: tracks site visits, enrollment, and data review; surfaces anomalies before they become inspection findings.
+
+## How it works
+- Orchestration layer above existing clinical systems (CTMS, eTMF, EDC) plus where work really happens (email, Slack, spreadsheets).
+- Every agent follows the same pattern: Retrieve data, Analyze with deterministic rules, Create auditable outputs.
+- Deterministic compliance: quality checks use rules and code, not generative models, so every decision is auditable. Human-in-the-loop; low-confidence OCR triggers review; safety exceptions bypass automation.
+- Entry point: site activation, then TMF readiness, site monitoring, and issue triage/CAPA — each reusing a shared knowledge layer.
+
+## Founder
+- Vadim Sokolov, PhD — Associate Professor at George Mason University (Systems Engineering & Operations Research); previously Principal Computational Scientist at Argonne National Laboratory and Visiting Professor at the University of Chicago Booth School of Business. Research in Bayesian statistics, machine learning, and computational modeling of complex systems.
+
+## Frequently asked questions
+- What does Nytel do? Nytel builds AI agents that automate the coordination work in clinical trials — document QC, site activation, follow-up/escalation, and monitoring — as an orchestration layer above CTMS, eTMF, and EDC that reads state and writes auditable actions back without replacing those systems.
+- How is Nytel different from Medidata, Veeva, or IQVIA? Those platforms optimize within their own silos; Nytel automates the work between systems — document-chasing, data reconciliation, and follow-up tracking — that today lives in email, Slack, spreadsheets, and people's heads.
+- Does Nytel use generative AI for compliance decisions? No. Quality checks use deterministic rules and code (not generative models), so every decision is auditable; LLMs handle document and communication understanding only. Low-confidence OCR triggers human review and safety exceptions bypass automation.
+- Which workflow does Nytel automate first? Site activation, from CDA execution to site go-live — the measurable KPI is CDA-to-activated time.
+- What does it take to get started? Nytel starts in email, Slack, and spreadsheets — no API credentials, IT procurement, or partner-system changes required to begin.
+- Who founded Nytel? Vadim Sokolov, PhD — Associate Professor at George Mason University; previously Argonne National Laboratory and UChicago Booth.
+
+## Contact
+- Email: contact@nytel.ai
+- Schedule a call: https://cal.com/nytel
+- Location: Northern Virginia (Washington, DC area)
