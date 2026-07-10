@@ -21,26 +21,151 @@ $toc-font-size: 0.8125rem;
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
-/* Site chrome (fixed header, CTA band, footer, buttons) is provided
-   by chrome.css, loaded via _header-meta.html — shared with the
-   marketing pages. This theme handles Quarto document styles only. */
+/* ============================================================
+   Nytel whitepaper chrome (top bar, CTA band, footer)
+   Scoped with .nytel-* class names on purpose: the whitepaper is a
+   Quarto + Bootstrap page, and Bootstrap already defines .container,
+   .btn, .header — so the marketing site's chrome.css class names
+   would collide here. These rules compile into the theme and are
+   embedded by embed-resources, so the whitepaper is self-contained
+   with no dependency on chrome.css. Keep visually in sync with
+   chrome.css (which styles index.html / overview.html).
+   ============================================================ */
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Header spacing — clears the fixed .header from chrome.css */
-#title-block-header {
-  padding-top: 5rem;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+.nytel-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 0;
+  margin-bottom: 2.5rem;
   border-bottom: 1px solid rgba(10, 22, 40, 0.10);
-  background: #F7F8FA;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+}
+
+.nytel-topbar-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nytel-topbar-logo img {
+  height: 26px;
+  width: auto;
+}
+
+.nytel-topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nytel-topbar-nav a {
+  font-family: $font-family-monospace;
+  font-size: 0.8125rem;
+  color: rgba(10, 22, 40, 0.90);
+  text-decoration: none;
+}
+
+.nytel-topbar-nav a:hover {
+  color: #0A1628;
+  text-decoration: none;
+}
+
+.nytel-topbar-nav a[aria-current="page"] {
+  color: #1F6B6B;
+  font-weight: 600;
+}
+
+.nytel-cta {
+  background: #0A1628;
+  color: #fff;
+  padding: 3.5rem 2.25rem;
+  margin: 4rem 0 0;
+}
+
+.nytel-cta h2 {
+  color: #fff;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+}
+
+.nytel-cta p {
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 2rem;
+  max-width: 60ch;
+}
+
+.nytel-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nytel-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: $font-family-monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.nytel-btn-teal {
+  background: #2D8B8B;
+  color: #fff;
+}
+.nytel-btn-teal:hover {
+  background: #1F6B6B;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nytel-btn-ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.nytel-btn-ghost:hover {
+  border-color: #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nytel-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(10, 22, 40, 0.10);
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  color: rgba(10, 22, 40, 0.62);
+}
+
+.nytel-footer-links a {
+  color: rgba(10, 22, 40, 0.90);
+  text-decoration: none;
+  margin-left: 1.25rem;
+}
+
+/* Title block */
+#title-block-header {
+  padding: 1.5rem 0 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(10, 22, 40, 0.10);
 }
 
 #title-block-header .title {
@@ -111,7 +236,6 @@ main strong {
 /* TOC */
 #TOC {
   font-family: $font-family-monospace;
-  padding-top: 5rem;
 }
 
 #TOC .active {
