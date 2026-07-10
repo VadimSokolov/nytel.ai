@@ -98,6 +98,27 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-dark); /* audit: AA-safe */
+  margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  background: var(--teal);
+}
+
 .hero-sub {
   font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
   color: var(--text-secondary);
@@ -123,7 +144,18 @@ a:hover {
   color: var(--teal-dark); /* audit: AA-safe */
   letter-spacing: 0.08em;
   margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+/* teal brand tick before every section number */
+.section-number::before {
+  content: "";
   display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--teal);
 }
 
 .section h2 {
@@ -176,6 +208,99 @@ a:hover {
   color: var(--teal-dark); /* audit: AA-safe */
   margin-top: 0.75rem;
   display: block;
+}
+
+/* ---- Agent list (section 02 — spec-sheet rhythm) ---- */
+
+.agent-list {
+  border-top: 1px solid var(--border-strong);
+  margin-top: 0.5rem;
+}
+
+.agent-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .agent-row {
+    grid-template-columns: 16rem 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+
+.agent-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+}
+
+.agent-index {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--teal-dark); /* audit: AA-safe */
+  line-height: 1.4;
+}
+
+.agent-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.agent-body p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.agent-body .stat-highlight {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--teal-dark); /* audit: AA-safe */
+  display: block;
+}
+
+/* ---- Principles (section 03 — compact 4-up with teal accent) ---- */
+
+.principle-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 560px) {
+  .principle-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .principle-row { grid-template-columns: repeat(4, 1fr); }
+}
+
+.principle {
+  background: var(--white);
+  padding: 1.75rem 1.5rem;
+  border-top: 2px solid var(--teal);
+}
+
+.principle h3 {
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.principle p {
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 /* ---- Founder ---- */
