@@ -319,6 +319,12 @@ a:hover {
   }
 }
 
+.founder-next {
+  margin-top: 3.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--border);
+}
+
 .founder-bio h3 {
   color: var(--navy);
   margin-bottom: 0.5rem;

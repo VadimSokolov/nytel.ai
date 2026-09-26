@@ -34,10 +34,14 @@
     "slogan": "Trials, on time.",
     "email": "contact@nytel.ai",
     "description": "Nytel builds AI agents that automate coordination work in clinical trials — document QC, site activation, follow-up workflows, and monitoring — sitting above existing systems like CTMS, eTMF, and EDC as an orchestration layer.",
-    "founder": {
+    "founder": [{
+      "@type": "Person",
+      "name": "Matthew Wamsley",
+      "jobTitle": "Co-founder & Chief Executive Officer"
+    }, {
       "@type": "Person",
       "name": "Vadim Sokolov",
-      "jobTitle": "Founder",
+      "jobTitle": "Co-founder",
       "url": "https://vsokolov.org",
       "affiliation": {
         "@type": "Organization",
@@ -48,7 +52,7 @@
         "https://arxiv.org/abs/2602.06379",
         "https://vsokolov.quarto.pub/clinos/"
       ]
-    },
+    }],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "sales",
@@ -115,20 +119,6 @@
     }
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What does Nytel do?", "acceptedAnswer": { "@type": "Answer", "text": "Nytel builds AI agents that automate the coordination work in clinical trials — document QC, site activation, follow-up and escalation, and monitoring. The agents sit above existing systems like CTMS, eTMF, and EDC as an orchestration layer: they read state and write auditable actions back, without replacing those systems." } },
-      { "@type": "Question", "name": "How is Nytel different from platforms like Medidata, Veeva, or IQVIA?", "acceptedAnswer": { "@type": "Answer", "text": "Those platforms optimize within their own silos. Nytel automates the work between systems — chasing documents from sites, reconciling data, and tracking follow-ups — which today largely lives in email, Slack, spreadsheets, and people's heads." } },
-      { "@type": "Question", "name": "Does Nytel use generative AI to make compliance decisions?", "acceptedAnswer": { "@type": "Answer", "text": "No. Quality checks use deterministic rules and code, not generative models, so every decision is auditable and reproducible. LLMs handle document and communication understanding only. OCR confidence below 0.80 triggers human review, and safety exceptions bypass automation." } },
-      { "@type": "Question", "name": "Which workflow does Nytel automate first?", "acceptedAnswer": { "@type": "Answer", "text": "Site activation — from CDA execution to site go-live. It is where timelines slip first and document-chasing is most acute, and it offers a measurable KPI: CDA-to-activated time. A small set of document types — investigator CVs, medical licenses, GCP certificates, FDA 1572 forms, and delegation logs — drives most of the QC work." } },
-      { "@type": "Question", "name": "What does it take to get started — API integrations or IT procurement?", "acceptedAnswer": { "@type": "Answer", "text": "Nytel starts where the data already is — email, Slack, and spreadsheets — so no API credentials, no IT procurement, and no changes to partner systems are required to begin. Direct system APIs come in a later phase." } },
-      { "@type": "Question", "name": "Who founded Nytel?", "acceptedAnswer": { "@type": "Answer", "text": "Nytel was founded by Vadim Sokolov, PhD — an Associate Professor at George Mason University in Systems Engineering and Operations Research, previously a Principal Computational Scientist at Argonne National Laboratory and a Visiting Professor at the University of Chicago Booth School of Business." } }
-    ]
-  }
-  </script>
 </head>
 <body>
 
@@ -140,7 +130,7 @@
         <a href="overview.html">Overview</a>
         <a href="whitepaper.html" class="hide-mobile">Whitepaper</a>
         <a href="https://cal.com/nytel">Schedule Call</a>
-        <a href="/cdn-cgi/l/email-protection#6a0905041e0b091e2a04131e0f06440b03">Contact</a>
+        <a href="mailto:contact@nytel.ai">Contact</a>
       </nav>
     </div>
   </header>
@@ -291,7 +281,7 @@
       <div class="founder-section">
         <div class="founder-bio">
           <h3>Vadim Sokolov, PhD</h3>
-          <div class="founder-title">Founder</div>
+          <div class="founder-title">Co-founder</div>
           <p>
             Associate Professor at George Mason University in Systems
             Engineering and Operations Research. Previously a Principal
@@ -331,41 +321,49 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container">
-      <span class="section-number">05</span>
-      <h2>Common questions</h2>
-      <p class="section-lead">
-        Straight answers to what clinical operations teams ask most about how Nytel fits into a trial.
-      </p>
-      <div class="faq">
-        <div class="faq-item">
-          <h3>What does Nytel do?</h3>
-          <p>Nytel builds AI agents that automate the coordination work in clinical trials — document QC, site activation, follow-up and escalation, and monitoring. The agents sit above existing systems like CTMS, eTMF, and EDC as an orchestration layer: they read state and write auditable actions back, without replacing those systems.</p>
+      <div class="founder-section founder-next">
+        <div class="founder-bio">
+          <h3>Matthew Wamsley</h3>
+          <div class="founder-title">Co-founder &amp; Chief Executive Officer</div>
+          <p>
+            AI and automation engineer and systems architect with more than
+            20 years of technology experience across telecommunications,
+            healthcare, and rail systems.
+          </p>
+          <p>
+            Built AI-enabled maintenance automation adopted across multiple
+            engineering teams at a large U.S. telecommunications company,
+            contributed to automated clinical interpretation using rules,
+            natural-language processing, and predictive analytics, and
+            architected a hosted positive train control platform at Herzog
+            Technologies.
+          </p>
+          <p>
+            At Nytel, works alongside Vadim Sokolov, who developed the
+            original platform design and MVP (Minimum Viable Product), and
+            focuses on business strategy, company operations, partnerships,
+            systems integration, and deployment. As the father of a childhood
+            cancer survivor treated through a clinical trial, brings a personal
+            commitment to improving the operational work behind clinical research.
+          </p>
         </div>
-        <div class="faq-item">
-          <h3>How is Nytel different from platforms like Medidata, Veeva, or IQVIA?</h3>
-          <p>Those platforms optimize within their own silos. Nytel automates the work between systems — chasing documents from sites, reconciling data, and tracking follow-ups — which today largely lives in email, Slack, spreadsheets, and people's heads.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Does Nytel use generative AI to make compliance decisions?</h3>
-          <p>No. Quality checks use deterministic rules and code, not generative models, so every decision is auditable and reproducible. LLMs handle document and communication understanding only. OCR confidence below 0.80 triggers human review, and safety exceptions bypass automation.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Which workflow does Nytel automate first?</h3>
-          <p>Site activation — from CDA execution to site go-live. It is where timelines slip first and document-chasing is most acute, and it offers a measurable KPI: CDA-to-activated time. A small set of document types — investigator CVs, medical licenses, GCP certificates, FDA 1572 forms, and delegation logs — drives most of the QC work.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What does it take to get started — API integrations or IT procurement?</h3>
-          <p>Nytel starts where the data already is — email, Slack, and spreadsheets — so no API credentials, no IT procurement, and no changes to partner systems are required to begin. Direct system APIs come in a later phase.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Who founded Nytel?</h3>
-          <p>Nytel was founded by Vadim Sokolov, PhD — an Associate Professor at George Mason University in Systems Engineering and Operations Research, previously a Principal Computational Scientist at Argonne National Laboratory and a Visiting Professor at the University of Chicago Booth School of Business.</p>
+        <div class="credentials">
+          <div class="credential">
+            <div class="cred-label">Expertise</div>
+            <div class="cred-value">AI and Workflow Automation, Systems Architecture and Integration, Deployment Engineering</div>
+          </div>
+          <div class="credential">
+            <div class="cred-label">Prior</div>
+            <div class="cred-value">Verizon, Herzog Technologies, Sq1 (acquired by Ansira), Texas Health Resources, Teradata, Tektronix</div>
+          </div>
+          <div class="credential">
+            <div class="cred-label">Education</div>
+            <div class="cred-value">BS, Computer Information Systems, Tarleton State University; graduate coursework in artificial intelligence, George Mason University</div>
+          </div>
+          <div class="credential">
+            <div class="cred-label">Location</div>
+            <div class="cred-value">Northern Virginia (Washington, DC area)</div>
+          </div>
         </div>
       </div>
     </div>
@@ -395,10 +393,10 @@
         &copy; 2026 Nytel. Nightingale + Intelligence.
       </div>
       <div class="footer-right">
-        <a href="/cdn-cgi/l/email-protection#781b17160c191b0c3816010c1d14561911"><span class="__cf_email__" data-cfemail="167579786277756256786f62737a38777f">[email&#160;protected]</span></a>
+        <a href="mailto:contact@nytel.ai">contact@nytel.ai</a>
       </div>
     </div>
   </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 </html>
